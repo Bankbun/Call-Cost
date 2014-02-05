@@ -1,0 +1,280 @@
+//ให้เอาไปแก้เอง ห้ามเหมือนแบบนี้แป๊ะ หรือใกล้เคียงมากเกินไป
+          _____             __       ___     ___          ____              ____     ___
+|     |  |     \  |       /    \    /   \   |    \       |    \  \   /     |    \   /   \   |\   |  |  /
+|     |  |_____/  |      |      |  |     |  |     |      |____/   \ /      |____/  |     |  | \  |  | /
+|     |  |        |      |      |  |_____|  |     |      |    \    |       |    \  |_____|  |  \ |  |/\
+ \___/   |        |____   \ __ /   |     |  |____/       |____/    |       |____/  |     |  |   \|  |  \
+
+
+#include<stdio.h>
+#include <stdlib.h>
+
+
+int promotion1();
+int promotion2();
+int promotion3();
+int promotion4();
+int sub1Pro3();
+int sub2Pro3();
+int sub1Pro4();
+int sub2Pro4();
+int k=0;
+char menu();
+main(){
+   menu();
+}
+
+char menu(){
+   int d=0;
+
+   //Pro1
+   printf("Please choose your promotion\n\n");
+   printf("[1] PRO Tor Sanuk Ber DTAC \n");
+   printf("First two minute is 99 Stang,Next minute is 24 Stang\n\n");
+  //Pro2
+   printf("[2] PRO Rak Tuk Kai\n");
+   printf("First minute is 2 Baht,Next minute is 50 Satang\n\n");
+   //Pro3
+   printf("[3] PRO Sam Kok\n");
+   printf("In period 5AM-5PM is 49 Satang per minute,Out period is 99 Satang per minute\n\n");
+   //Pro4
+   printf("[4] PRO Tor Took Tuk Krue Kai\n");
+   printf("11PM-5PM First two minute is 2 Baht,Next minute is 50 Stang\n");
+   printf("5PM-11PM First two minute is 2 Baht,Next minute is 1 Baht\n\n");
+
+   printf("You choose Promotion : ");
+   scanf("%d",&d);
+
+   if (d==1){system("cls"); promotion1();}
+   if (d==2){system("cls"); promotion2();}
+   if (d==3){system("cls"); promotion3();}
+   if (d==4){system("cls"); promotion4();}
+   if(d<1||d>4){system("cls");main();    }
+}
+
+int promotion1(){
+    float a=0,x=0,n=0;
+    printf("Promotion1\n");
+    printf("Please input your call time :");
+    scanf("%f",&a);
+    printf("Your call time is : %0.2f Minute\n\n",a);
+
+    if(a<=2)x=0.99;
+    if(a<=2)n=((0.99*7)/100)+0.99;
+    if(a>2)x=(a-2)*.24+0.99;
+    if(a>2)n=(a-2)*(((7*0.24)/100)+0.24)+(((7*0.99)/100)+0.99);
+
+    printf("Your call cost is             : %0.2f Baht\n",x);
+    printf("Your call cost include VAT is : %0.2f Baht\n\n",n);
+    printf("Recalculated press 1\n");
+    printf("Go to home menu press 2\n");
+    scanf("%d",&k);
+
+    if(k==1){
+    system("cls");
+    promotion1();
+    }
+    if(k==2){
+    system("cls");
+    main();
+    }
+    getch();
+}
+
+int promotion2(){
+    float b=0,y=0,r=0;
+    printf("Promotion2\n");
+    printf("Please input your call time :");
+    scanf("%f",&b);
+    printf("Your call time is : %0.2f Minute\n\n",b);
+
+    if(b==1)y=2;
+    if(b==1)r=2.14;
+    if(b>1)y=(b-1)*.50+2;
+    if(b>1)r=(b-1)*(((7*0.50)/100)+0.50)+2.14;
+
+    printf("Your call cost is             : %0.2f Baht\n",y);
+    printf("Your call cost include VAT is : %0.2f Baht\n\n",r);
+    printf("Recalculated press 1\n");
+    printf("Go to home menu press 2\n");
+    scanf("%d",&k);
+
+    if(k==1){
+    system("cls");
+    promotion2();
+    }
+    if(k==2){
+    system("cls");
+    main();
+    }
+
+    getch();
+}
+
+int promotion3(){
+    int i=0;
+    printf("Promotion3\n");
+    printf("\n");
+    printf("You call in 5AM-5PM ?\n\n");
+    printf("Yes press 1\n");
+    printf("No press 2\n");
+    scanf("%d",&i);
+
+    if(i==1)
+    sub1Pro3();
+    else if(i==2)
+    sub2Pro3();
+    else if(i>=3){
+    printf("\nERROR");
+    printf("\n\nGo to home menu press 1\n");
+    scanf("%d",&k);
+
+    if(k==1){
+    system("cls");
+    main();
+    }
+    getch();
+    }
+}
+
+int promotion4(){
+    int u=0;
+    printf("Promotion4\n");
+    printf("Choose period time\n");
+    printf("11PM-5PM press 1\n");
+    printf("5PM-11PM press 2\n\n");
+    scanf("%d",&u);
+
+    if(u==1)
+    sub1Pro4();
+    else if(u==2)
+    sub2Pro4();
+    else if(u>=3){
+    printf("\nERROR");
+    printf("\n\nGo to home menu press 1\n");
+    scanf("%d",&k);
+
+    if(k==1){
+    system("cls");
+    main();
+    }
+    getch();
+    }
+}
+
+int sub1Pro3(){
+    float e=0,f=0,s=0;
+    printf("\n5AM-5PM\n");
+    printf("Please input your call time :");
+    scanf("%f",&e);
+    printf("Your call time is : %0.2f Minute\n\n",e);
+
+    if(e==1)f=0.49;
+    if(e==1)s=(((0.49*7)/100)+0.49);
+    if(e>1)f=(e-1)*.49+0.49;
+    if(e>1)s=(e-1)*(((0.49*7)/100)+0.49)+0.49;
+
+    printf("Your call cost is             : %0.2f Baht\n",f);
+    printf("Your call cost include VAT is : %0.2f Baht\n\n",s);
+    printf("Recalculated press 1\n");
+    printf("Go to home menu press 2\n");
+    scanf("%d",&k);
+
+    if(k==1){
+    system("cls");
+    promotion3();
+    }
+    if(k==2){
+    system("cls");
+    main();
+    }
+    getch();
+}
+
+int sub2Pro3(){
+    float g=0,h=0,t=0;
+    printf("\n5PM-5AM\n");
+    printf("Please input your call time :");
+    scanf("%f",&g);
+    printf("Your call time is : %0.2f Minute\n\n",g);
+
+    if(g==1)h=0.99;
+    if(g==1)t=(((7*0.99)/100)+0.99);
+    if(g>1)h=(g-1)*.99+0.99;
+    if(g>1)t=(g-1)*(((7*0.99)/100)+0.99)+(((7*0.99)/100)+0.99);
+
+    printf("Your call cost is             : %0.2f Baht\n",h);
+    printf("Your call cost include VAT is : %0.2f Baht\n\n",t);    printf("Go to home menu press 1\n");
+    printf("Recalculated press 1\n");
+    printf("Go to home menu press 2\n");
+    scanf("%d",&k);
+
+    if(k==1){
+    system("cls");
+    promotion3();
+    }
+    if(k==2){
+    system("cls");
+    main();
+    }
+    getch();
+}
+
+int sub1Pro4(){
+    float m=0,n=0,o=0;
+    printf("\n11PM-5PM\n");
+    printf("Please input your call time :");
+    scanf("%f",&m);
+    printf("Your call time is : %0.2f Minute\n\n",m);
+
+    if(m<=2)n=2;
+    if(m<=2)o=(((2*7)/100)+2);
+    if(m>2)n=(m-2)*0.50+2;
+    if(m>2)o=(m-2)*(((0.50*7)/100)+0.50)+(((2*7)/100)+2);
+
+    printf("Your call cost is             : %0.2f Baht\n",n);
+    printf("Your call cost include VAT is : %0.2f Baht\n\n",o);
+    printf("Recalculated press 1\n");
+    printf("Go to home menu press 2\n");
+    scanf("%d",&k);
+
+    if(k==1){
+    system("cls");
+    promotion4();
+    }
+    if(k==2){
+    system("cls");
+    main();
+    }
+    getch();
+}
+
+int sub2Pro4(){
+    float p=0,q=0,r=0;
+    printf("\n11PM-5PM\n");
+    printf("Please input your call time :");
+    scanf("%f",&p);
+    printf("Your call time is : %0.2f Minute\n\n",p);
+
+    if(p<=2)q=2;
+    if(p<=2)r=(((2*7)/100)+2);
+    if(p>2)q=((p-2)*1)+2;
+    if(p>2)r=((p-2)*1.07)+2.14;
+
+    printf("Your call cost is             : %0.2f Baht\n",q);
+    printf("Your call cost include VAT is : %0.2f Baht\n\n",r);
+    printf("Recalculated press 1\n");
+    printf("Go to home menu press 2\n");
+    scanf("%d",&k);
+
+    if(k==1){
+    system("cls");
+    promotion4();
+    }
+    if(k==2){
+    system("cls");
+    main();
+    }
+    getch();
+}
+
