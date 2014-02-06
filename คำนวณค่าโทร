@@ -45,7 +45,7 @@ int promotion1(){
     printf("Call price is : %0.2f\n\n",c);
 
     printf("Press 1 Recalculated\n");
-    printf("Press 2 to go main menu\n");
+    printf("Press 2 go to main menu\n");
     printf("Select :");
     scanf("%d",&z);
 
@@ -71,7 +71,7 @@ int promotion2(){
     printf("Call price is : %0.2f\n\n",c);
 
     printf("Press 1 Recalculated\n");
-    printf("Press 2 to go main menu\n");
+    printf("Press 2 go to main menu\n");
     printf("Select :");
     scanf("%d",&z);
 
@@ -107,7 +107,7 @@ int promotion3(){
     printf("Call price is : %0.2f\n\n",c*d);
 
     printf("Press 1 Recalculated\n");
-    printf("Press 2 to go main menu\n");
+    printf("Press 2 go to main menu\n");
     printf("Select :");
     scanf("%d",&z);
 
