@@ -28,7 +28,7 @@ char menu(){
    int d=0;
 
    //Pro1
-   printf("Please choose your promotion\n\n");
+   printf("Please select your promotion\n\n");
    printf("[1] PRO Tor Sanuk Ber DTAC \n");
    printf("First two minute is 99 Stang,Next minute is 24 Stang\n\n");
   //Pro2
@@ -42,7 +42,7 @@ char menu(){
    printf("11PM-5PM First two minute is 2 Baht,Next minute is 50 Stang\n");
    printf("5PM-11PM First two minute is 2 Baht,Next minute is 1 Baht\n\n");
 
-   printf("You choose Promotion : ");
+   printf("You select Promotion : ");
    scanf("%d",&d);
 
    if (d==1){system("cls"); promotion1();}
